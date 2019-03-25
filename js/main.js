@@ -11,35 +11,35 @@ jQuery(function ($, undefined) {
     })
     function getData(num, startTime) {
         var longtime;
-        var danwei;
+        var timeType;
         let selectorName = '.add .addevent #eventName' + num;
         let selectorTime = '.add .addevent #eventTime' + num;
         let selectorCount = '.add .addevent .count' + num;
-        let selectorDanwei = '.add .addevent #select' + num;
+        let selectorTimeType = '.add .addevent #select' + num;
         let eventName = $(selectorName).val();
         var eventTime = $(selectorTime).val();
-        var eventDanwei = $(selectorDanwei).val();
-        switch (eventDanwei) {
+        var eventTimeType = $(selectorTimeType).val();
+        switch (eventTimeType) {
             case '0':
                 longtime = eventTime * 24 * 60 * 60 * 1000;
-                danwei = 'day';
+                timeType = 'day';
                 break;
             case '1':
                 longtime = eventTime * 60 * 60 * 1000;
-                danwei = 'hour';
+                timeType = 'hour';
                 break;
             case '2':
                 longtime = eventTime * 60 * 1000;
-                danwei = 'min';
+                timeType = 'min';
                 break;
             case '3':
                 longtime = eventTime * 1000;
-                danwei = 'second';
+                timeType = 'second';
                 break;
         }
         var endTime = startTime - longtime;
         var endTimeUTC = endTime + 8 * 60 * 60 * 1000;
-        $('.result').prepend(num + 1 + '. ' + eventName + '时间点为：' + new Date(endTimeUTC).toISOString().slice(0, -5) + '  (时长' + eventTime + danwei + ')<br>');
+        $('.result').prepend(num + 1 + '. ' + eventName + '时间点为：' + new Date(endTimeUTC).toISOString().slice(0, -5) + '  (时长' + eventTime + timeType + ')<br>');
         return endTime;
         //$(selectorCount).html(num+1+'. '+eventName+'时间点为：'+eventTime + ' (时长'+eventTime+')')
     }
@@ -51,5 +51,9 @@ jQuery(function ($, undefined) {
             startTimeNum = getData(j - 1, startTimeNum);
             j = j - 1;
         }
+        $('.result').append(idLength+1 + '. '+ $('.sth').text().trim() +'时间点为：' + $('.startTime').text() + '  (时长0min，预计划的事件正在发生)<br>');
+    })
+    $('#resetResult').click(()=>{
+        $('.result').html('');
     })
 })
