@@ -59,7 +59,7 @@ jQuery(function ($, undefined) {
     $('#resetResult').click(()=>{
         //FIXME: Too bad to extend easily
         $('.add .addevent').length  = 0;
-        $('.add').remove();
+        $('.add').html('');
         $('.mainthing').html('');
         $('.mainthing').append('<label>请输入要做的事情</label><input type="text" id="sth" name="sth" placeholder="看电影?">' 
           + '<label>请输入事情开始时间</label><input type="date" id="startDate" name="date"><input type="time" id="startTime" name="time">');
