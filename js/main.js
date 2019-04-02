@@ -4,7 +4,7 @@ jQuery(function ($, undefined) {
         var idNum = $('.add .addevent').length;
         $('.add').append('<div class="addevent"><div class = "count' + idNum + '"><label>请输入事件名</label><input type="text" id="eventName' 
           + idNum + '">请输入时间<input type="text" id="eventTime' + idNum + '">选择单位<select name="times" id="select' 
-          + idNum + '"><option value="0">day</option><option value="1">hour</option><option value="2">min</option><option value="3">second</option></div></div>');
+          + idNum + '"><option value="0">day</option><option value="1">hour</option><option value="2"  selected = "selected">min</option><option value="3">second</option></div></div>');
         if (idNum == 0) {
             let sth = $('#sth').val();
             let startTime = $('#startTime').val();
