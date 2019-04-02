@@ -47,6 +47,8 @@ jQuery(function ($, undefined) {
         //$(selectorCount).html(num+1+'. '+eventName+'时间点为：'+eventTime + ' (时长'+eventTime+')')
     }
     $('#ok').click(() => {
+        $('.result').html('');
+        //FIXME: Error occurred when no time value is given
         var idLength = $('.add .addevent').length;
         var startTime = document.querySelectorAll('h3 .startTime')[0].textContent;
         var startTimeNum = new Date(startTime.trim()).getTime();
