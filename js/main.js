@@ -1,7 +1,10 @@
 jQuery(function ($, undefined) {
+    //FIXME: Too bad to extend easily
     $('#addbtn').click(() => {
         var idNum = $('.add .addevent').length;
-        $('.add').append('<div class="addevent"><div class = "count' + idNum + '"><label>请输入事件名</label><input type="text" id="eventName' + idNum + '">请输入时间<input type="text" id="eventTime' + idNum + '">选择单位<select name="times" id="select' + idNum + '"><option value="0">day</option><option value="1">hour</option><option value="2">min</option><option value="3">second</option></div></div>');
+        $('.add').append('<div class="addevent"><div class = "count' + idNum + '"><label>请输入事件名</label><input type="text" id="eventName' 
+          + idNum + '">请输入时间<input type="text" id="eventTime' + idNum + '">选择单位<select name="times" id="select' 
+          + idNum + '"><option value="0">day</option><option value="1">hour</option><option value="2"  selected = "selected">min</option><option value="3">second</option></div></div>');
         if (idNum == 0) {
             let sth = $('#sth').val();
             let startTime = $('#startTime').val();
@@ -44,6 +47,8 @@ jQuery(function ($, undefined) {
         //$(selectorCount).html(num+1+'. '+eventName+'时间点为：'+eventTime + ' (时长'+eventTime+')')
     }
     $('#ok').click(() => {
+        $('.result').html('');
+        //FIXME: Error occurred when no time value is given
         var idLength = $('.add .addevent').length;
         var startTime = document.querySelectorAll('h3 .startTime')[0].textContent;
         var startTimeNum = new Date(startTime.trim()).getTime();
@@ -54,6 +59,12 @@ jQuery(function ($, undefined) {
         $('.result').append(idLength+1 + '. '+ $('.sth').text().trim() +'时间点为：' + $('.startTime').text() + '  (时长0min，预计划的事件正在发生)<br>');
     })
     $('#resetResult').click(()=>{
+        //FIXME: Too bad to extend easily
+        $('.add .addevent').length  = 0;
+        $('.add').html('');
+        $('.mainthing').html('');
+        $('.mainthing').append('<label>请输入要做的事情</label><input type="text" id="sth" name="sth" placeholder="看电影?">' 
+          + '<label>请输入事情开始时间</label><input type="date" id="startDate" name="date"><input type="time" id="startTime" name="time">');
         $('.result').html('');
     })
 })
