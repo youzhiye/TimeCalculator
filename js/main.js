@@ -1,5 +1,5 @@
 const $ = window.$
-jQuery(function ($, undefined) {
+window.jQuery(function ($, _) {
   // FIXME: Too bad to extend easily
   $('#addbtn').click(() => {
     addbtn()
@@ -11,17 +11,17 @@ jQuery(function ($, undefined) {
     calcTime(2)
   })
   $('#resetResult').click(() => {
-    location.reload()
+    window.location.reload()
   })
 })
 function checkInput (inputData) {
   if (inputData !== '') {
     if (/[^\d]/.test(inputData)) {
-      alert('请输入数字')
+      window.alert('请输入数字')
       return 1
     }
   } else {
-    alert('时长不允许为空！')
+    window.alert('时长不允许为空！')
     return 1
   }
 }
