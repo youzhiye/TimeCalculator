@@ -9,6 +9,8 @@
 
 # Code of Conduct
 
+You can see [rules][standardjs-rule] here.
+
 1. Install `standard` with `npm`
 
   > npm install standard -g
@@ -23,3 +25,5 @@
 ### Tips
 
 Can't input time? Please change your IME with English.
+
+[standardjs-rule]: https://standardjs.com/rules.html
