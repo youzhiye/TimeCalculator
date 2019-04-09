@@ -1,3 +1,4 @@
+const $ = window.$
 jQuery(function ($, undefined) {
   // FIXME: Too bad to extend easily
   $('#addbtn').click(() => {
@@ -14,7 +15,7 @@ jQuery(function ($, undefined) {
   })
 })
 function checkInput (inputData) {
-  if (inputData != '') {
+  if (inputData !== '') {
     if (/[^\d]/.test(inputData)) {
       alert('请输入数字')
       return 1
@@ -30,7 +31,7 @@ function calcTime (type) {
   var idLength = $('.add .addevent').length
   var startTime = document.querySelectorAll('h3 .startTime')[0].textContent
   var startTimeNum = new Date(startTime.trim()).getTime()
-  if (type == 1) {
+  if (type === 1) {
     for (let i = 0, j = idLength; i < idLength; i++) {
       startTimeNum = getData(i, startTimeNum)
       $('.result').append(startTimeNum[1])
@@ -55,7 +56,7 @@ function addbtn () {
   var eventTimeIdNum = `请输入时间<input type="text" id="eventTime${idNum}">`
   var eventNameIdNum = `<label>请输入事件名</label><input type="text" id="eventName${idNum}">`
   var selectType = `<option value="0">day</option><option value="1">hour</option><option value="2"  selected = "selected">min</option><option value="3">second</option></div></div>`
-  if (idNum == 0) {
+  if (idNum === 0) {
     let sth = $('#sth').val()
     let startTime = $('#startTime').val()
     let startDate = $('#startDate').val()
