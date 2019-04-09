@@ -4,10 +4,10 @@ jQuery(function ($, undefined) {
         addbtn();
     })
     $('#ascOk').click(() => {
-        calcTime(2);
+        calcTime(1);
     })
     $('#descOk').click(() => {
-        calcTime(1);
+        calcTime(2);
     })
     $('#resetResult').click(() => {
         location.reload()
@@ -33,21 +33,21 @@ function calcTime(type) {
     var startTimeNum = new Date(startTime.trim()).getTime();
     if (type == 1) {
         for (let i = 0, j = idLength; i < idLength; i++) {
-            startTimeNum = getData(j - 1, startTimeNum);
-            $('.result').prepend(startTimeNum[1]);
+            startTimeNum = getData(i, startTimeNum);
+            $('.result').append(startTimeNum[1]);
             startTimeNum = startTimeNum[0];
             j = j - 1;
         }
-        $('.result').append('<b>' + $('.sth').text().trim() + '时间点为：' + $('.startTime').text() + '  (时长0min，预计划的事件正在发生)</b><br>');
+        $('.result').prepend('<b>' + $('.sth').text().trim() + '时间点为：' + $('.startTime').text() + '  (时长0min，预计划的事件正在发生)</b><br>');
     }
     else {
         for (let i = 0, j = 0; i < idLength; i++) {
             startTimeNum = getData(j, startTimeNum);
-            $('.result').prepend(startTimeNum[1].slice(2));
+            $('.result').prepend(startTimeNum[1]);
             startTimeNum = startTimeNum[0];
             j = j + 1;
         }
-        $('.result').prepend('<b>' + $('.sth').text().trim() + '时间点为：' + $('.startTime').text() + '  (时长0min，预计划的事件正在发生)</b><br>');
+        $('.result').append('<b>' + $('.sth').text().trim() + '时间点为：' + $('.startTime').text() + '  (时长0min，预计划的事件正在发生)</b><br>');
     }
 }
 function addbtn() {
@@ -103,6 +103,6 @@ function getData(num, startTime) {
     var endTime = startTime - longtime;
     var endTimeUTC = endTime + 8 * 60 * 60 * 1000;
     var outputTime = new Date(endTimeUTC).toISOString().slice(0, -5);
-    var outputText = `${num + 1}. ${eventName}时间点为：${outputTime} (时长${eventTime}${timeType})<br>`;
+    var outputText = `${eventName}时间点为：${outputTime} (时长${eventTime}${timeType})<br>`;
     return [endTime, outputText];
 }
