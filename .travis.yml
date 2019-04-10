@@ -1,0 +1,12 @@
+sudo: false
+os: linux
+
+language: node_js
+node_js:
+  - "node"
+
+install:
+  - npm install standard -g
+
+script: 
+  - standard --fix
