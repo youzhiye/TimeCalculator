@@ -4,23 +4,29 @@
 ![GitHub](https://img.shields.io/github/license/Gabirel/TimeCalculator.svg)
 
 # TimeCalculator
-  
-  This project is used for calculating your time along with your schedule.
+
+This project is used for calculating your time along with your schedule.
 
 # Code of Conduct
 
 You can see [rules][standardjs-rule] here.
 
-1. Install `standard` with `npm`
+1. Install `standard` and `htmlhint` with `npm`
 
-  > npm install standard -g
+> npm install standard -g
+
+> npm install htmlhint -g
 
 2. If you encounter warning, please fix them with the following command:
 
-  > standard --fix
+> standard --fix
 
+> htmlhint --config .htmlhint *.{htm,html}*
 
 **Fix them before you push! Otherwise it won't pass the Travis CI.**
+
+3. Use `.editorconfig` to define coding styles between multiple developers
+
 
 ### Tips
 
