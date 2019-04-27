@@ -21,7 +21,7 @@ You can see [rules][standardjs-rule] here.
 
 > standard --fix
 
-> htmlhint --config .htmlhintrc *.{htm,html}
+> htmlhint --config .htmlhintrc \*.{htm,html}
 
 **Fix them before you push! Otherwise it won't pass the Travis CI.**
 
