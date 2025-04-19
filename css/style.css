@@ -196,6 +196,12 @@ input, select {
     gap: 0.25rem;
 }
 
+.flex.items-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .action-buttons {
     display: flex;
     gap: 0.5rem;
