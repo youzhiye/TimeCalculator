@@ -1,4 +1,3 @@
-
 /* time_calculator/frontend/css/style.css */
 :root {
     --primary: #6366f1;
@@ -41,7 +40,8 @@ body {
     background-color: var(--primary-dark);
 }
 
-input, select {
+input,
+select {
     background-color: var(--card);
     border: 1px solid var(--border);
     color: var(--text);
@@ -147,6 +147,7 @@ input, select {
 .dark #targetEventSummary p {
     color: #f8fafc !important;
 }
+
 .dark button[id^="sort"] {
     color: #f8fafc !important;
 }
@@ -212,6 +213,13 @@ input, select {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
