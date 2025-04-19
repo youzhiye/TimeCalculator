@@ -1,0 +1,216 @@
+
+/* time_calculator/frontend/css/style.css */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --card: #ffffff;
+    --border: #e2e8f0;
+}
+
+.dark {
+    --primary: #818cf8;
+    --primary-dark: #6366f1;
+    --bg: #0f172a;
+    --text: #f8fafc;
+    --card: #1e293b;
+    --border: #334155;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: all 0.3sease;
+    overflow-x: hidden;
+}
+
+.card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+input, select {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 50;
+}
+
+.event-item {
+    transition: all 0.2s ease;
+}
+
+.event-item:hover {
+    transform: translateY(-2px);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    min-height: 65px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timeline-item:first-child {
+    min-height: 75px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 1.25rem;
+    width: 2px;
+    height: calc(100% + 0.5rem);
+    background-color: var(--border);
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.editing {
+    background-color: rgba(99, 102, 241, 0.1) !important;
+    border: 1px solid var(--primary) !important;
+}
+
+.edit-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit-input {
+    width: 60px;
+    text-align: center;
+}
+
+.delete-btn {
+    color: #ef4444;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.dark .delete-btn {
+    color: #f87171;
+}
+
+.delete-btn:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.dark #summaryTargetTime,
+.dark #summaryTargetName {
+    color: #f8fafc;
+}
+
+.dark #targetEventSummary {
+    background-color: #1e293b !important;
+}
+
+.dark #targetEventSummary p {
+    color: #f8fafc !important;
+}
+.dark button[id^="sort"] {
+    color: #f8fafc !important;
+}
+
+.dark #resetEvents {
+    color: #1e293b !important;
+}
+
+.dark .event-item {
+    background-color: rgba(99, 102, 241, 0.2) !important;
+    color: var(--text) !important;
+}
+
+/* 修复暗色模式下中间事件的输入框样式 */
+.dark .edit-name,
+.dark .edit-input,
+.dark .edit-unit {
+    background-color: #334155 !important;
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+/* 确保暗色模式下所有输入框的文字颜色一致 */
+.dark input,
+.dark select {
+    color: #f8fafc;
+    background-color: #334155;
+    border-color: #475569;
+}
+
+.sort-buttons {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.sort-btn {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-buttons button {
+    flex: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
