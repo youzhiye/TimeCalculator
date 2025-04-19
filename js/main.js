@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('timelineSection').classList.remove('hidden');
-    document.getElementById('timelineTitle').textContent = isDescending ? '逆序时间安排如下：' : '正序时间安排如下：';
+    document.getElementById('timelineTitle').textContent = isDescending ? '逆序安排：' : '正序安排：';
 
     const targetTime = new Date(targetEvent.time);
 
