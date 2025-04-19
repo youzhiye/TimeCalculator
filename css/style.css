@@ -71,10 +71,6 @@ input, select {
     justify-content: center;
 }
 
-/* .timeline-item:first-child {
-    min-height: 75px;
-} */
-
 .timeline-item::before {
     content: "";
     position: absolute;
