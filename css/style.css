@@ -66,15 +66,14 @@ input, select {
 .timeline-item {
     position: relative;
     padding-left: 2rem;
-    margin-bottom: 1.5rem;
     min-height: 65px;
     flex-direction: column;
     justify-content: center;
 }
 
-.timeline-item:first-child {
+/* .timeline-item:first-child {
     min-height: 75px;
-}
+} */
 
 .timeline-item::before {
     content: "";
